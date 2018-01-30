@@ -14,12 +14,12 @@ PVector dir;
 PVector food;
 
 void setup(){
-  size(190, 190);
+  size(1920, 1080);
   
   //Da vores logik er bundet til frameraten, kan vi
   //forøge hastigheden ved at hæve vores framerate.
   //prøv det
-  frameRate(4);
+  frameRate(10);
   
   snakeSize = 2;
   
@@ -29,8 +29,8 @@ void setup(){
   
   //vi finder et tilfældig sted at ligge noget
   //mad til vores slange
-  food = new PVector((int)random(0,18)*10, 
-    (int)random(0,18)*10);
+  food = new PVector((int)random(0,18)*40, 
+    (int)random(0,18)*40);
     
   dir = new PVector(0, 0);
 }
@@ -39,6 +39,7 @@ void draw(){
   background(0);
   
   //tegner maden
+  fill(#FF0000);
   rect(food.x, food.y, 10, 10);
   
   //har tilføjer vi et extra segment af vores slange,
@@ -49,6 +50,7 @@ void draw(){
   
   //går igennem vært segment af vores slange
   //og tegner den.
+  fill(#0063FF);
   for(int i = longSnake.size()-1; i >= 0; i--){
     rect(longSnake.get(i).x, longSnake.get(i).y,10,10);
     
@@ -79,8 +81,8 @@ void draw(){
         food.y == longSnake.get(longSnake.size()-1).y){
     
     //vi flytter vores med et nyt sted
-    food = new PVector((int)random(0,18)*10, 
-    (int)random(0,18)*10);
+    food = new PVector((int)random(0,40)*10, 
+    (int)random(0,40)*10);
     
     snakeSize++;
   }
