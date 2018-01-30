@@ -1,5 +1,5 @@
 //globale variabler 
-
+//test
 //liste over alle punkter vores slange optager
 ArrayList<PVector> longSnake;
 
